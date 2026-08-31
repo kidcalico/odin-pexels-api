@@ -7,6 +7,10 @@
   <%= form.submit "Display Collection" %>
 <% end %>
 <br />
-<% @photos.each do |photo| %>
-  <%= image_tag(photo) %>
+<% if @photos && @photos.empty? %>
+  <p>Collection not found.</p>
+<% elsif @photos %>
+  <% @photos.each do |photo| %>
+    <%= image_tag(photo) %>
+  <% end %>
 <% end %>
