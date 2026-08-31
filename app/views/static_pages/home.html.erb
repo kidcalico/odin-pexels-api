@@ -6,6 +6,11 @@
   <%= form.text_field :id %>
   <%= form.submit "Display Collection" %>
 <% end %>
+<%= form_with url: root_path, method: :get do |form| %>
+  <%= form.label :search_term, "Search by keyword:" %>
+  <%= form.text_field :search_term %>
+  <%= form.submit "Display Collection" %>
+<% end %>
 <br />
 <% if @photos && @photos.empty? %>
   <p>Collection not found.</p>
@@ -14,3 +19,4 @@
     <%= image_tag(photo) %>
   <% end %>
 <% end %>
+
