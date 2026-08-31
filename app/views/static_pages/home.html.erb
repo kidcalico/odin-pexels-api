@@ -1,0 +1,12 @@
+<h1>Pexels API Interface</h1>
+<p>Display a Pexels collection by entering in a collection ID.</p>
+
+<%= form_with url: root_path, method: :get do |form| %>
+  <%= form.label :id, "Collection id:" %>
+  <%= form.text_field :id %>
+  <%= form.submit "Display Collection" %>
+<% end %>
+<br />
+<% @photos.each do |photo| %>
+  <%= image_tag(photo) %>
+<% end %>
